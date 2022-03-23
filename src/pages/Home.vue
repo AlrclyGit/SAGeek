@@ -7,11 +7,11 @@
 
 <script setup>
 import TodoList from "../components/TodoList.vue"
-import {useMouse} from '../utils/mouse'
+import { useMouse } from '../utils/mouse'
 
 import { ref } from "vue";
 
-let {x,y} = useMouse()
+let { x, y } = useMouse()
 
 let { count, add } = lejia()
 
@@ -25,7 +25,7 @@ function lejia() {
 
 </script>
 
-<style>
+<style scoped>
 h1 {
     color: red;
 }
