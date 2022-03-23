@@ -1,7 +1,19 @@
-# Vue 3 + Vite
+### 初始化
+```
+npm init vite // 使用 Vite 构建 Vue3 项目
+cd geek
+npm install // 初始化 npm 配置文件
+npm run dev // 启动 Vite 服务器
+```
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
-
-## Recommended IDE Setup
-
-- [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
+### 规范化目录组织结构
+```
+├── src
+│   ├── api            数据请求
+│   ├── assets         静态资源
+│   ├── components     组件
+│   ├── pages          页面
+│   ├── router         路由配置
+│   ├── store          vuex数据
+│   └── utils          工具函数
+```
