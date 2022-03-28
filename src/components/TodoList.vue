@@ -20,14 +20,15 @@
 <script setup>
 
 import { ref, computed } from "vue";
+import { useStorage } from '../utils/storage.js'
 
 let { title, todos, addTodo, clear, active, all, allDone } = useTodos();
 
 function useTodos() {
-    const title = ref("");
-    const todos = ref([
-        { title: "学习Vue", done: false }
-    ]);
+    let title = ref("");
+    let todos = useStorage('todos', []);
+
+    // 方法
     function addTodo() {
         todos.value.push({
             title: title.value,
@@ -38,6 +39,7 @@ function useTodos() {
     function clear() {
         todos.value = todos.value.filter((v) => !v.done);
     }
+    // 计算属性
     let active = computed(() => {
         return todos.value.filter((v) => !v.done).length;
     });
@@ -54,6 +56,7 @@ function useTodos() {
             });
         },
     });
+    // 返回
     return { title, todos, addTodo, clear, active, all, allDone };
 }
 
