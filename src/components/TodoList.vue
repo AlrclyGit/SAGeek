@@ -18,13 +18,15 @@
 </template>
 
 <script setup>
-
 import { ref, computed } from "vue";
 import { useStorage } from '../utils/storage.js'
 
+// 调用
 let { title, todos, addTodo, clear, active, all, allDone } = useTodos();
 
+// 方法
 function useTodos() {
+    // 变量
     let title = ref("");
     let todos = useStorage('todos', []);
 
